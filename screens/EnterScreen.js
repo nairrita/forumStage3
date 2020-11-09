@@ -33,24 +33,31 @@ export default class EnterScreen extends React.Component {
         <Text style={styles.buttonText}>Your One Stop</Text>
         <Text style={styles.buttonText}>Solution To All Your</Text>
         <Text style={styles.buttonText}>problems</Text>
-        <Text style={{ fontSize: RFValue(20), color: "#12ed90", fontWeight : 'bold', fontStyle : 'italic' }}>
+        <Text
+          style={{
+            fontSize: RFValue(20),
+            color: "#12ed90",
+            fontWeight: "bold",
+            fontStyle: "italic"
+          }}
+        >
           Sign In or Create an Account
         </Text>
         <TouchableOpacity
-        style = {styles.button}
+          style={styles.button}
           onPress={() => {
             this.props.navigation.navigate("SignIn");
           }}
         >
-          <Text style = {styles.buttonText}>Sign In</Text>
+          <Text style={styles.buttonText}>Sign In</Text>
         </TouchableOpacity>
         <TouchableOpacity
-        style = {styles.button}
+          style={styles.button}
           onPress={() => {
             this.props.navigation.navigate("SignUp");
           }}
         >
-          <Text style = {styles.buttonText}>Create an account</Text>
+          <Text style={styles.buttonText}>Create an account</Text>
         </TouchableOpacity>
       </View>
     );
@@ -62,8 +69,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#222831",
     alignItems: "center",
-    marginTop : RFValue(-15),
-    width:RFValue(350)
+    marginTop: RFValue(-15),
+    width: RFValue(350)
   },
   button: {
     backgroundColor: "#00adb5",
@@ -79,15 +86,15 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: RFValue(30),
     fontStyle: "italic",
-    alignSelf : 'center',
+    alignSelf: "center"
   },
   buttonText2: {
     fontWeight: "bold",
     color: "#fff",
     fontSize: RFValue(30),
     fontStyle: "italic",
-    alignSelf : 'center',
-    marginTop : RFValue(100)
+    alignSelf: "center",
+    marginTop: RFValue(100)
   },
   inputBox: {
     backgroundColor: "#00adb5",

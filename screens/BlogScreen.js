@@ -1,5 +1,15 @@
 import * as React from "react";
-import {TouchableOpacity,Text,View,TextInput,StyleSheet,FlatList,Image,Alert,KeyboardAvoidingView} from "react-native";
+import {
+  TouchableOpacity,
+  Text,
+  View,
+  TextInput,
+  StyleSheet,
+  FlatList,
+  Image,
+  Alert,
+  KeyboardAvoidingView
+} from "react-native";
 import { Badge, Icon, Header, ListItem, Input } from "react-native-elements";
 import firebase from "firebase";
 import db from "../config";
@@ -32,18 +42,19 @@ export default class BlogScreen extends React.Component {
 
   renderItem = ({ item, i }) => (
     <TouchableOpacity
-    onPress = {()=>{
-      //changed here
-      this.props.navigation.navigate("Data")
-    }}>
-    <ListItem
-      key={i}
-      title={item.topic}
-      subtitle={item.matter}
-      titleStyle={styles.titleStyle}
-      containerStyle = {styles.list}
-      bottomDivider
-    />
+      onPress={() => {
+        //changed here
+        this.props.navigation.navigate("Data");
+      }}
+    >
+      <ListItem
+        key={i}
+        title={item.topic}
+        subtitle={item.matter}
+        titleStyle={styles.titleStyle}
+        containerStyle={styles.list}
+        bottomDivider
+      />
     </TouchableOpacity>
   );
 
@@ -59,14 +70,17 @@ export default class BlogScreen extends React.Component {
           containerStyle={styles.header}
           centerComponent={{
             text: "AADHAR Card",
-            style: {flex: 1,color: "#fff",fontWeight: "bold",fontStyle: "italic",fontSize: RFValue(30)
+            style: {
+              flex: 1,
+              color: "#fff",
+              fontWeight: "bold",
+              fontStyle: "italic",
+              fontSize: RFValue(30)
             }
           }}
         />
         <View style={{ flex: 0.88, borderWidth: 2 }}>
-          {
-          this.state.aadharBlogs.length === 0 
-          ? (
+          {this.state.aadharBlogs.length === 0 ? (
             <View>
               <Text style={styles.buttonText}>No Blogs Available</Text>
             </View>
@@ -76,8 +90,7 @@ export default class BlogScreen extends React.Component {
               data={this.state.aadharBlogs}
               renderItem={this.renderItem}
             />
-          )
-          }
+          )}
         </View>
         <TouchableOpacity
           style={styles.button}
@@ -96,11 +109,11 @@ export default class BlogScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#222831",
+    backgroundColor: "#222831"
   },
   button: {
-    width:RFValue(150),
-    alignSelf : 'center',
+    width: RFValue(150),
+    alignSelf: "center",
     backgroundColor: "#00adb5",
     borderWidth: RFValue(2),
     borderColor: "#fff",
@@ -133,8 +146,8 @@ const styles = StyleSheet.create({
     fontSize: RFValue(25),
     textAlign: "center"
   },
-  list : {
-    alignSelf : 'center',
-    width : RFValue(350),
+  list: {
+    alignSelf: "center",
+    width: RFValue(350)
   }
 });
